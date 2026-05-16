@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 import toast from 'react-hot-toast';
 
 const UsersEdit = () => {
-    document.title = 'Users Edit - RW30 Digital';
+    document.title = 'Users Edit - PT Ready Industries Indonesia';
     const navigate = useNavigate();
     const { id } = useParams();
     const [name, setName] = useState('');

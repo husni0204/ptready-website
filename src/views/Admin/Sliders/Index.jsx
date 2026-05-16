@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 import SlidersCreate from './Create';
 
 const SlidersIndex = () => {
-    document.title = 'Sliders - RW30 Digital';
+    document.title = 'Sliders - PT Ready Industries Indonesia';
     const [sliders, setSliders] = useState([]);
     const [pagination, setPagination] = useState({
         currentPage: 0,

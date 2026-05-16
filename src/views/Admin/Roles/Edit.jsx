@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 import toast from 'react-hot-toast';
 
 const RolesEdit = () => {
-    document.title = 'Edit Roles - RW30 Digital';
+    document.title = 'Edit Roles - PT Ready Industries Indonesia';
     const navigate = useNavigate();
     const { id } = useParams();
     const [name, setName] = useState('');

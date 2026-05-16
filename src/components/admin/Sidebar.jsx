@@ -12,6 +12,8 @@ const sidebar = () => {
     //get data user from cookies
     const user = JSON.parse(Cookies.get('user'));
 
+    console.log('info user : ', user);
+
     return (
         <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
             <div className="sb-sidenav-menu">
@@ -27,7 +29,7 @@ const sidebar = () => {
                     {(hasAnyPermission(['categories.index']) ||
                         hasAnyPermission(['posts.index']) ||
                         hasAnyPermission(['pages.index']) ||
-                        hasAnyPermission(['products.index'])) && (
+                        hasAnyPermission(['contacts.delete'])) && (
                         <>
                             <div className="sb-sidenav-menu-heading">CONTENT MANAGEMENT</div>
                             <a
@@ -39,7 +41,7 @@ const sidebar = () => {
                                           ? ' active-sidebar'
                                           : activeRoute[2] === 'pages'
                                             ? ' active-sidebar'
-                                            : activeRoute[2] === 'products'
+                                            : activeRoute[2] === 'contacts'
                                               ? ' active-sidebar'
                                               : '')
                                 }
@@ -69,7 +71,7 @@ const sidebar = () => {
                                   ? ' show'
                                   : activeRoute[2] === 'pages'
                                     ? ' show'
-                                    : activeRoute[2] === 'products'
+                                    : activeRoute[2] === 'contacts'
                                       ? ' show'
                                       : '')
                         }
@@ -97,7 +99,7 @@ const sidebar = () => {
                             )}
 
                             {hasAnyPermission(['products.index']) && (
-                                <Link className={activeRoute[2] === 'products' ? 'nav-link active-sidebar' : 'nav-link'} to="/admin/products">
+                                <Link className={activeRoute[2] === 'contacts' ? 'nav-link active-sidebar' : 'nav-link'} to="/admin/contacts">
                                     Menu
                                 </Link>
                             )}

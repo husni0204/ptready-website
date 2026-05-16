@@ -14,7 +14,7 @@ import Pagination from '../../../components/general/Pagination';
 
 const PermissionsIndex = () => {
     //title page
-    document.title = 'Permissions - Desa Digital';
+    document.title = 'Permissions - PT Ready Industries Indonesia';
 
     //define state "permissions"
     const [permissions, setPermissions] = useState([]);

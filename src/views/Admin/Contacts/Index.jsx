@@ -9,27 +9,29 @@ import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import toast from 'react-hot-toast';
 
-const ProductsIndex = () => {
-    document.title = 'Products - RW 30 Digital';
-    const [products, setProducts] = useState([]);
+const ContacsIndex = () => {
+    document.title = 'Contacts - PT Ready Industries Indonesia';
+    const [contacts, setContacts] = useState([]);
     const [pagination, setPagination] = useState({
         currentPage: 0,
         perPage: 0,
         total: 0,
     });
+
     const [keywords, setKeywords] = useState('');
     const token = Cookies.get('token');
     const [loading, setLoading] = useState(false);
+
     const fetchData = async (pageNumber = 1, keywords = '') => {
         const page = pageNumber ? pageNumber : pagination.currentPage;
         try {
             setLoading(true);
-            await Api.get(`/api/admin/products?search=${keywords}&page=${page}`, {
+            await Api.get(`/api/admin/contacts?search=${keywords}&page=${page}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
             }).then((response) => {
-                setProducts(response.data.data.data);
+                setContacts(response.data.data.data);
                 setPagination({
                     currentPage: response.data.data.current_page,
                     perPage: response.data.data.per_page,
@@ -43,7 +45,6 @@ const ProductsIndex = () => {
     };
 
     useEffect(() => {
-        //call function "fetchData"
         fetchData();
         setLoading(false);
     }, []);
@@ -53,9 +54,9 @@ const ProductsIndex = () => {
         fetchData(1, e.target.value);
     };
 
-    const deleteProduct = (id) => {
+    const deleteAparatur = (id) => {
         confirmAlert({
-            title: 'Anda Yakin Ingin Menghapus?',
+            title: 'Anda Yakin ?',
             message: 'Data yang dihapus tidak dapat dikembalikan',
             buttons: [
                 {
@@ -63,7 +64,7 @@ const ProductsIndex = () => {
                     onClick: async () => {
                         try {
                             setLoading(true);
-                            await Api.delete(`/api/admin/products/${id}`, {
+                            await Api.delete(`/api/admin/contacts/${id}`, {
                                 headers: {
                                     Authorization: `Bearer ${token}`,
                                 },
@@ -77,7 +78,7 @@ const ProductsIndex = () => {
                                 setLoading(false);
                             });
                         } catch (error) {
-                            return error.message;
+                            return error.message, setLoading(false);
                         }
                     },
                 },
@@ -96,9 +97,9 @@ const ProductsIndex = () => {
                     <div className="row">
                         <div className="col-md-8">
                             <div className="row">
-                                {hasAnyPermission(['products.create']) && (
+                                {hasAnyPermission(['aparaturs.create']) && (
                                     <div className="col-md-3 col-12 mb-2">
-                                        <Link to="/admin/products/create" className="btn btn-md btn-primary border-0 shadow-sm w-100" type="button">
+                                        <Link to="/admin/aparaturs/create" className="btn btn-md btn-primary border-0 shadow-sm w-100" type="button">
                                             <i className="fa fa-plus-circle"></i> Add New
                                         </Link>
                                     </div>
@@ -130,10 +131,9 @@ const ProductsIndex = () => {
                                                     <th className="border-0" style={{ width: '5%' }}>
                                                         No.
                                                     </th>
-                                                    <th className="border-0">Title</th>
-                                                    <th className="border-0">Owner</th>
-                                                    <th className="border-0">Phone</th>
-                                                    <th className="border-0">Price</th>
+                                                    <th className="border-0">Image</th>
+                                                    <th className="border-0">Full Name</th>
+                                                    <th className="border-0">Role</th>
                                                     <th className="border-0" style={{ width: '15%' }}>
                                                         Actions
                                                     </th>
@@ -142,30 +142,31 @@ const ProductsIndex = () => {
                                             <tbody>
                                                 {
                                                     //cek apakah data ada
-                                                    products.length > 0 && loading === false ? (
-                                                        //looping data "products" dengan "map"
-                                                        products.map((product, index) => (
+                                                    contacts.length > 0 && loading === false ? (
+                                                        //looping data "aparaturs" dengan "map"
+                                                        contacts.map((aparatur, index) => (
                                                             <tr key={index}>
                                                                 <td className="fw-bold text-center">
                                                                     {++index + (pagination.currentPage - 1) * pagination.perPage}
                                                                 </td>
-                                                                <td>{product.title}</td>
-                                                                <td>{product.owner}</td>
-                                                                <td>{product.phone}</td>
-                                                                <td>{product.price}</td>
                                                                 <td className="text-center">
-                                                                    {hasAnyPermission(['products.edit']) && (
+                                                                    <img src={aparatur.image} width="50" />
+                                                                </td>
+                                                                <td>{aparatur.name}</td>
+                                                                <td>{aparatur.role}</td>
+                                                                <td className="text-center">
+                                                                    {hasAnyPermission(['aparaturs.edit']) && (
                                                                         <Link
-                                                                            to={`/admin/products/edit/${product.id}`}
+                                                                            to={`/admin/aparaturs/edit/${aparatur.id}`}
                                                                             className="btn btn-primary btn-sm me-2"
                                                                         >
                                                                             <i className="fa fa-pencil-alt"></i>
                                                                         </Link>
                                                                     )}
 
-                                                                    {hasAnyPermission(['products.delete']) && (
+                                                                    {hasAnyPermission(['aparaturs.delete']) && (
                                                                         <button
-                                                                            onClick={() => deleteProduct(product.id)}
+                                                                            onClick={() => deleteAparatur(aparatur.id)}
                                                                             className="btn btn-danger btn-sm"
                                                                         >
                                                                             <i className="fa fa-trash"></i>
@@ -210,4 +211,4 @@ const ProductsIndex = () => {
     );
 };
 
-export default ProductsIndex;
+export default ContacsIndex;

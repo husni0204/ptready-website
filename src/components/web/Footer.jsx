@@ -3,32 +3,23 @@
 const footer = () => {
     return (
         <footer>
-            <div className="container-fluid footer-top">
+            <div className="container-fluid footer-top bg-secondary">
                 <div className="row p-4">
                     <div className="col-md-4 mb-4 mt-3">
+                        <div className="d-flex justify-content-start gap-2">
+                            <img src="/images/logo_ready.png" width="30" />
                         <h5>
                             TENTANG
-                            <strong style={{ color: '#ffd22e' }}> Dapur Caguna</strong>
+                            <strong style={{ color: '#ffd22e' }}> PT READY INDUSTRIES INDONESIA</strong>
                         </h5>
-                        <hr />
-                        <div className="text-center">
-                            <img src="/images/logo_dapurcaguna.jpg" width="70" />
                         </div>
+                        <hr />
                         <p className="text-justify mt-3">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum eaque, dicta laborum quaerat cumque voluptatem.
                         </p>
                     </div>
                     <div className="col-md-4 mb-4 mt-3">
-                        <h5>
-                            DOWNLOAD <strong style={{ color: '#ffd22e' }}> APLIKASI</strong>
-                        </h5>
-                        <hr />
-                        <div className="text-left">
-                            <img src="/images/playstore.png" width={'180'} className="text-center align-items-center" />
-                        </div>
-                        <p className="text-justify mt-2 text-left">
-                            Dapatkan info update Desa lebih cepat melalui aplikasi Android. Silahkan unduh melalui PlayStore.
-                        </p>
+                        
                     </div>
                     <div className="col-md-4 mb-4 mt-3">
                         <h5>
@@ -36,22 +27,21 @@ const footer = () => {
                         </h5>
                         <hr />
                         <p>
-                            <i className="fa fa-map-marker"></i> Kp Ciwadas RT 16 RW 04 jalan Kali Leweng Sereh Desa Klari Kec Klari kab Karawang Jawa
-                            Barat
+                            <i className="fa fa-map-marker"></i> Kampung Bangkong Reang, Desa/Kelurahan Wangunharja, Kec. Cikarang Utara, Kab. Bekasi, Provinsi Jawa Barat
                             <br />
+                            
+                            <i className="fas fa-envelope"></i> marketing@ready-id.co.id
                             <br />
-                            <i className="fas fa-envelope"></i> info@dapurcaguna.sahabatternak.com
-                            <br />
-                            <br />
-                            <i className="fas fa-phone"></i> +62 852-8741-6169
+                            
+                            <i className="fas fa-phone"></i> +62 852-1112-1118
                         </p>
                     </div>
                 </div>
             </div>
-            <div className="container-fluid footer-bottom">
+            <div className="container-fluid footer-bottom bg-primary">
                 <div className="row p-3">
                     <div className="text-center text-white font-weight-bold">
-                        Copyright © {new Date().getFullYear()} Dapur Caguna. All Rights Reserved.
+                        Copyright © {new Date().getFullYear()} PT Ready Industries Indonesia. All Rights Reserved.
                     </div>
                 </div>
             </div>

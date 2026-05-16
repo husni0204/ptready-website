@@ -8,7 +8,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 const PostsEdit = () => {
-    document.title = 'Posts Edit - RW30 Digital';
+    document.title = 'Posts Edit - PT Ready Industries Indonesia';
     const navigate = useNavigate();
     const { id } = useParams();
     const [image, setImage] = useState('');

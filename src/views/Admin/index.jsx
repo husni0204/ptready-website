@@ -15,14 +15,10 @@ import PostsEdit from './Posts/Edit';
 import PagesIndex from './Pages/Index';
 import PagesCreate from './Pages/Create';
 import PagesEdit from './Pages/Edit';
-import ProductsIndex from './Products/Index';
-import ProductsCreate from './Products/Create';
-import ProductsEdit from './Products/Edit';
 import PhotosIndex from './Photos/Index';
 import SlidersIndex from './Sliders/Index';
-import AparatursIndex from './Aparaturs/Index';
-import AparatursCreate from './Aparaturs/Create';
-import AparatursEdit from './Aparaturs/Edit';
+import ContacsIndex from './Contacts/Index';
+
 
 export {
     PermissionsIndex,
@@ -42,12 +38,7 @@ export {
     PagesIndex,
     PagesCreate,
     PagesEdit,
-    ProductsIndex,
-    ProductsCreate,
-    ProductsEdit,
     PhotosIndex,
     SlidersIndex,
-    AparatursIndex,
-    AparatursCreate,
-    AparatursEdit,
+    ContacsIndex
 };

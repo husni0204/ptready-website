@@ -10,7 +10,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 import toast from 'react-hot-toast';
 
 const PagesIndex = () => {
-    document.title = 'Pages - RW30 Digital';
+    document.title = 'Pages - PT Ready Industries Indonesia';
     const [pages, setPages] = useState([]);
     const [pagination, setPagination] = useState({
         currentPage: 0,

@@ -10,7 +10,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 import toast from 'react-hot-toast';
 
 const CategoriesIndex = () => {
-    document.title = 'Categories - RW30 Digital';
+    document.title = 'Categories - PT Ready Industries Indonesia';
     const [categories, setCategories] = useState([]);
     const [pagination, setPagination] = useState({
         currentPage: 0,

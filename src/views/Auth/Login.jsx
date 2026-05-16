@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 
 const Login = () => {
     //title page
-    document.title = 'Login | Desa';
+    document.title = 'Login | PT Ready Industries Indonesia';
     //navigate
     const navigate = useNavigate();
     //define state
@@ -66,9 +66,9 @@ const Login = () => {
             >
                 <div className="col-md-7">
                     <div className="text-center mb-5">
-                        <img src={'/images/logo-jbg.png'} width={'100'} alt="logo" />
-                        <h4>
-                            <strong className="text-white mt-3">RW 30, GCC SAKURA</strong>
+                        <img src={'/images/logo_ready.png'} width={'100'} alt="logo" />
+                        <h4 className="mt-3">
+                            <strong className="text-primary mt-3">READY INDUSTRIES</strong>
                         </h4>
                     </div>
                     <div className="card rounded-4 shadow-sm border-top-success">
@@ -79,7 +79,7 @@ const Login = () => {
                                     <div className="col-12">
                                         <label>Email Address</label>
                                         <div className="input-group">
-                                            <div className="input-group-text">
+                                            <div className="input-group-text bg-primary">
                                                 <i className="fa fa-envelope"></i>
                                             </div>
                                             <input
@@ -96,7 +96,7 @@ const Login = () => {
                                     <div className="col-12">
                                         <label>Password</label>
                                         <div className="input-group">
-                                            <div className="input-group-text">
+                                            <div className="input-group-text bg-primary">
                                                 <i className="fa fa-lock"></i>
                                             </div>
                                             <input
@@ -115,7 +115,7 @@ const Login = () => {
                                             &nbsp; Loading ...
                                         </button>
                                     ) : (
-                                        <button type="submit" className="btn btn-primary px-4 float-end rounded-4">
+                                        <button type="submit" className="btn btn-outline-primary px-4 float-end rounded-4">
                                             LOGIN
                                         </button>
                                     )}

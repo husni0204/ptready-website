@@ -10,7 +10,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 import toast from 'react-hot-toast';
 
 const UsersIndex = () => {
-    document.title = 'Users - RW 30 Digital';
+    document.title = 'Users - PT Ready Industries Indonesia';
     const [users, setUsers] = useState([]);
     const [pagination, setPagination] = useState({
         currentPage: 0,

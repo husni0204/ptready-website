@@ -8,9 +8,9 @@ const Web = ({ children }) => {
     return (
         <>
             <Navbar />
-            {children}
-            {/* <div style={{ minHeight: "100vh" }}>
-            </div> */}
+            <div style={{ minHeight: "100vh" }}>
+                {children}
+            </div>
             <Footer />
         </>
     );

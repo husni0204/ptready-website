@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 const RolesCreate = () => {
     //title page
-    document.title = 'Create Roles - RW30 Digital';
+    document.title = 'Create Roles - PT Ready Industries Indonesia';
 
     //navigate
     const navigate = useNavigate();

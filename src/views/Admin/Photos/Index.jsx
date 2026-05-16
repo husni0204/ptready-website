@@ -10,7 +10,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 import toast from 'react-hot-toast';
 
 const PhotosIndex = () => {
-    document.title = 'Photos - RW30 Digital';
+    document.title = 'Photos - PT Ready Industries Indonesia';
     const [photos, setPhotos] = useState([]);
     const [pagination, setPagination] = useState({
         currentPage: 0,

@@ -7,7 +7,7 @@ const auth = ({ children }) => {
     return (
         <div
             style={{
-                backgroundImage: 'url(/images/bg.png)',
+                backgroundImage: 'url(/images/bg_new.png)',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',

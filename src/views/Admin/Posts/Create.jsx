@@ -8,7 +8,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 const PostsCreate = () => {
-    document.title = 'Posts Create - RW30 Digital';
+    document.title = 'Posts Create - PT Ready Industries Indonesia';
     const navigate = useNavigate();
     const [image, setImage] = useState('');
     const [title, setTitle] = useState('');

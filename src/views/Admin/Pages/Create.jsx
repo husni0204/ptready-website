@@ -8,7 +8,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 const PagesCreate = () => {
-    document.title = 'Pages Create - RW30 Digital';
+    document.title = 'Pages Create - PT Ready Industries Indonesia';
     const navigate = useNavigate();
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');

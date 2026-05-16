@@ -8,23 +8,23 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className="navbar navbar-expand-md navbar-light navbar-top d-none d-md-block d-lg-block">
+            <nav className="navbar navbar-expand-md navbar-light bg-primary navbar-top d-none d-md-block d-lg-block">
                 <div className="container">
                     <div className="collapse navbar-collapse">
                         <ul className="navbar-nav me-auto mb-2 mb-md-0">
                             <li className="nav-item me-4">
-                                <i className="fa fa-envelope"></i> info@dapurcaguna.sahabatternak.com
+                                <i className="fa fa-envelope"></i> marketing@ready-id.co.id
                             </li>
                             <li className="nav-item me-4">
-                                <i className="fa fa-phone"></i> +62 852-8741-6169
+                                <i className="fa fa-phone"></i> +62 852-1112-1118
                             </li>
                         </ul>
                         <div>
                             IKUTI KAMI :
-                            <a href="https://www.facebook.com/dapur.caguna.1" className="ms-2 me-2">
+                            <a href="#" className="ms-2 me-2">
                                 <i className="fab fa-facebook-square text-white fa-lg"></i>
                             </a>
-                            <a href="https://www.instagram.com/dapur_caguna/?igsh=MWZ5NTVnZ2NhbXZycg%3D%3D" className="ms-2 me-2">
+                            <a href="#" className="ms-2 me-2">
                                 <i className="fab fa-instagram text-white fa-lg"></i>
                             </a>
                             <a href="#" className="ms-2 me-2">
@@ -35,20 +35,20 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            <div className="jumbotron-header pb-3">
+            <div className="jumbotron-header pb-3 bg-secondary">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-9 d-none d-md-block d-lg-block">
                             <div className="header-logo">
                                 <a href="#">
-                                    <img src="/images/logo_dapurcaguna.jpg" width="110" className="img-responsive" />
+                                    <img src="/images/logo_ready.png" width="110" className="img-responsive" />
                                 </a>
                             </div>
                             <div className="header-text">
-                                <h2 className="header-school">DAPUR CAGUNA</h2>
+                                <h2 className="header-school">PT READY INDUSTRIES INDONESIA</h2>
                                 <hr />
                                 <div className="header-address">
-                                    Kp Ciwadas RT 16 RW 04 jalan Kali Leweng Sereh Desa Klari Kec Klari kab Karawang Jawa Barat
+                                    Kampung Bangkong Reang, Desa/Kelurahan Wangunharja, Kec. Cikarang Utara, Kab. Bekasi, Provinsi Jawa Barat
                                 </div>
                             </div>
                         </div>
@@ -60,10 +60,10 @@ const Navbar = () => {
                                 </a>
                             </div>
                             <div className="col-md-12 text-center text-white mb-3">
-                                <h2 className="header-school">DAPUR CAGUNA</h2>
+                                <h2 className="header-school">PT READY INDUSTRIES INDONESIA</h2>
                                 <hr />
                                 <div className="header-address">
-                                    Kp Ciwadas RT 16 RW 04 jalan Kali Leweng Sereh Desa Klari Kec Klari kab Karawang Jawa Barat
+                                    Kampung Bangkong Reang, Desa/Kelurahan Wangunharja, Kec. Cikarang Utara, Kab. Bekasi, Provinsi Jawa Barat
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            <nav className="navbar navbar-expand-md navbar-light navbar-blue nav-web">
+            <nav className="navbar navbar-expand-md navbar-light bg-primary navbar-blue nav-web">
                 <div className="container">
                     <button
                         className="navbar-toggler"
@@ -116,18 +116,9 @@ const Navbar = () => {
                                     className={activeRoute[1] === 'pages' ? 'nav-link active text-uppercase' : 'nav-link text-uppercase'}
                                     to="/pages"
                                 >
-                                    <i className="fa fa-info-circle"></i> TENTANG DAPUR CAGUNA
+                                    <i className="fa fa-info-circle"></i> TENTANG KAMI
                                 </Link>
                             </li>
-
-                            {/* <li className="nav-item ms-2">
-                                <Link
-                                    className={activeRoute[1] === 'aparaturs' ? 'nav-link active text-uppercase' : 'nav-link text-uppercase'}
-                                    to="/aparaturs"
-                                >
-                                    <i className="fa fa-user-circle"></i> APARATURS
-                                </Link>
-                            </li> */}
 
                             <li className="nav-item ms-2">
                                 <Link
@@ -140,21 +131,22 @@ const Navbar = () => {
 
                             <li className="nav-item ms-2">
                                 <Link
-                                    className={activeRoute[1] === 'products' ? 'nav-link active text-uppercase' : 'nav-link text-uppercase'}
-                                    to="/products"
-                                >
-                                    <i className="fa fa-shopping-bag"></i> MENU DAPUR CAGUNA
-                                </Link>
-                            </li>
-
-                            <li className="nav-item ms-2">
-                                <Link
                                     className={activeRoute[1] === 'photos' ? 'nav-link active text-uppercase' : 'nav-link text-uppercase'}
                                     to="/photos"
                                 >
                                     <i className="fa fa-images"></i> GALERI
                                 </Link>
                             </li>
+
+                            <li className="nav-item ms-2">
+                                <Link
+                                    className={activeRoute[1] === 'contacts' ? 'nav-link active text-uppercase' : 'nav-link text-uppercase'}
+                                    to="/contacts"
+                                >
+                                    <i className="fa fa-user-circle"></i> CONTACT US
+                                </Link>
+                            </li>
+
                         </ul>
                     </div>
                 </div>

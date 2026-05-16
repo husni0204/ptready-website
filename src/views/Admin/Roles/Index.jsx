@@ -11,7 +11,7 @@ import toast from 'react-hot-toast';
 
 const RolesIndex = () => {
     //title page
-    document.title = 'Roles - RW30 Digital';
+    document.title = 'Roles - PT Ready Industries Indonesia';
 
     //define state "roles"
     const [roles, setRoles] = useState([]);

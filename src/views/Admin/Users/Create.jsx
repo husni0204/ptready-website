@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 import toast from 'react-hot-toast';
 
 const UsersCreate = () => {
-    document.title = 'Users Create - RW30 Digital';
+    document.title = 'Users Create - PT Ready Industries Indonesia';
     const navigate = useNavigate();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');

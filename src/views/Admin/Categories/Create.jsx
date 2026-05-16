@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 import { useState } from 'react';
 
 const CategoriesCreate = () => {
-    document.title = 'Create Categories - RW30 Digital';
+    document.title = 'Create Categories - PT Ready Industries Indonesia';
     const navigate = useNavigate();
     const [name, setName] = useState('');
     const [errors, setErros] = useState([]);

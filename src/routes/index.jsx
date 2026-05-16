@@ -20,25 +20,18 @@ import {
     PagesIndex,
     PagesCreate,
     PagesEdit,
-    ProductsIndex,
-    ProductsCreate,
-    ProductsEdit,
     PhotosIndex,
     SlidersIndex,
-    AparatursIndex,
-    AparatursCreate,
-    AparatursEdit,
+    ContacsIndex,
 } from '../views/Admin/';
 import {
-    Aparaturs,
     Home,
+    WebContactsCreate,
     WebPagesIndex,
     WebPagesShow,
     WebPhotosIndex,
     WebPostsIndex,
     WebPostsShow,
-    WebProductsIndex,
-    WebProductsShow,
 } from '../views/Web';
 
 const RoutesIndex = () => {
@@ -220,36 +213,6 @@ const RoutesIndex = () => {
                 }
             />
 
-            {/* private route "/admin/products" */}
-            <Route
-                path="/admin/products"
-                element={
-                    <PrivateRoutes>
-                        <ProductsIndex />
-                    </PrivateRoutes>
-                }
-            />
-
-            {/* private route "/admin/products/create" */}
-            <Route
-                path="/admin/products/create"
-                element={
-                    <PrivateRoutes>
-                        <ProductsCreate />
-                    </PrivateRoutes>
-                }
-            />
-
-            {/* private route "/admin/products/edit" */}
-            <Route
-                path="/admin/products/edit/:id"
-                element={
-                    <PrivateRoutes>
-                        <ProductsEdit />
-                    </PrivateRoutes>
-                }
-            />
-
             {/* private route "/admin/photos" */}
             <Route
                 path="/admin/photos"
@@ -270,32 +233,12 @@ const RoutesIndex = () => {
                 }
             />
 
-            {/* private route "/admin/aparaturs" */}
+            {/* private route "/admin/contacts" */}
             <Route
-                path="/admin/aparaturs"
+                path="/admin/contacts"
                 element={
                     <PrivateRoutes>
-                        <AparatursIndex />
-                    </PrivateRoutes>
-                }
-            />
-
-            {/* private route "/admin/aparaturs/create" */}
-            <Route
-                path="/admin/aparaturs/create"
-                element={
-                    <PrivateRoutes>
-                        <AparatursCreate />
-                    </PrivateRoutes>
-                }
-            />
-
-            {/* private route "/admin/aparaturs/edit" */}
-            <Route
-                path="/admin/aparaturs/edit/:id"
-                element={
-                    <PrivateRoutes>
-                        <AparatursEdit />
+                        <ContacsIndex />
                     </PrivateRoutes>
                 }
             />
@@ -303,8 +246,8 @@ const RoutesIndex = () => {
             {/* route "/" */}
             <Route path="/" element={<Home />} />
 
-            {/* route "/aparaturs" */}
-            <Route path="/aparaturs" element={<Aparaturs />} />
+            {/* route "/contacts" */}
+            <Route path="/contacts" element={<WebContactsCreate />} />
 
             {/* route "/pages" */}
             <Route path="/pages" element={<WebPagesIndex />} />
@@ -320,12 +263,6 @@ const RoutesIndex = () => {
 
             {/* route "/posts:/slug" */}
             <Route path="/posts/:slug" element={<WebPostsShow />} />
-
-            {/* route "/products" */}
-            <Route path="/products" element={<WebProductsIndex />} />
-
-            {/* route "/products/:slug" */}
-            <Route path="/products/:slug" element={<WebProductsShow />} />
         </Routes>
     );
 };

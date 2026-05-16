@@ -2,31 +2,30 @@ import LayoutAdmin from '../../../layouts/Admin';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Api from '../../../services/Api';
-import Cookies from 'js-cookie';
 import toast from 'react-hot-toast';
 
-const AparatursCreate = () => {
-    document.title = 'Aparatur Create - RW30 Digital';
+const WebContactsCreate = () => {
+    document.title = 'Contacts - PT Ready Industries Indonesia';
     const navigate = useNavigate();
-    const [name, setName] = useState('');
-    const [image, setImage] = useState('');
-    const [role, setRole] = useState('');
+    const [nama, setNama] = useState('');
+    const [email, setEmail] = useState('');
+    const [no_hp, setNo_hp] = useState('');
+    const [teks_pesan, setTeks_pesan] = useState('');
     const [errors, setErros] = useState([]);
-    const token = Cookies.get('token');
     const [loading, setLoading] = useState(false);
 
-    const storeAparatur = async (e) => {
+    const storeContact = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append('image', image);
-        formData.append('name', name);
-        formData.append('role', role);
+        formData.append('nama', nama);
+        formData.append('email', email);
+        formData.append('no_hp', no_hp);
+        formData.append('teks_pesan', teks_pesan);
 
         try {
             setLoading(true);
-            await Api.post('/api/admin/aparaturs', formData, {
+            await Api.post('/api/public/contacts', formData, {
                 headers: {
-                    Authorization: `Bearer ${token}`,
                     'Content-Type': 'multipart/form-data',
                 },
             }).then((response) => {
@@ -34,7 +33,7 @@ const AparatursCreate = () => {
                     position: 'top-right',
                     duration: 4000,
                 });
-                navigate('/admin/aparaturs');
+                navigate('/public/contacts');
                 setLoading(false);
             });
         } catch (error) {
@@ -49,48 +48,60 @@ const AparatursCreate = () => {
                 <div className="container-fluid mb-5 mt-5">
                     <div className="row">
                         <div className="col-md-12">
-                            <Link to="/admin/aparaturs" className="btn btn-md btn-primary border-0 shadow-sm mb-3" type="button">
+                            <Link to="/admin/contacts" className="btn btn-md btn-primary border-0 shadow-sm mb-3" type="button">
                                 <i className="fa fa-long-arrow-alt-left me-2"></i> Back
                             </Link>
                             <div className="card border-0 rounded shadow-sm border-top-success">
                                 <div className="card-body">
                                     <h6>
-                                        <i className="fa fa-pencil"></i> Create Aparatur
+                                        <i className="fa fa-pencil"></i> Tinggalkan Pesan
                                     </h6>
                                     <hr />
-                                    <form onSubmit={storeAparatur}>
+                                    <form onSubmit={storeContact}>
                                         <div className="mb-3">
-                                            <label className="form-label fw-bold">Image</label>
-                                            <input
-                                                type="file"
-                                                className="form-control"
-                                                accept="image/*"
-                                                onChange={(e) => setImage(e.target.files[0])}
-                                            />
-                                        </div>
-                                        {errors.image && <div className="alert alert-danger">{errors.image[0]}</div>}
-                                        <div className="mb-3">
-                                            <label className="form-label fw-bold">Full Name</label>
+                                            <label className="form-label fw-bold">Nama</label>
                                             <input
                                                 type="text"
                                                 className="form-control"
-                                                value={name}
-                                                onChange={(e) => setName(e.target.value)}
-                                                placeholder="Enter Full Name"
+                                                value={nama}
+                                                onChange={(e) => setNama(e.target.value)}
+                                                placeholder="Masukan Nama"
                                             />
                                         </div>
-                                        {errors.name && <div className="alert alert-danger">{errors.name[0]}</div>}
+                                        {errors.nama && <div className="alert alert-danger">{errors.nama[0]}</div>}
                                         <div className="mb-3">
-                                            <label className="form-label fw-bold">Role</label>
+                                            <label className="form-label fw-bold">Email</label>
                                             <input
                                                 type="text"
                                                 className="form-control"
-                                                value={role}
-                                                onChange={(e) => setRole(e.target.value)}
-                                                placeholder="Enter Role Name"
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                                placeholder="Masukan Email"
                                             />
                                         </div>
-                                        {errors.name && <div className="alert alert-danger">{errors.name[0]}</div>}
+                                        {errors.email && <div className="alert alert-danger">{errors.email[0]}</div>}
+                                        <div className="mb-3">
+                                            <label className="form-label fw-bold">Nomor Handphone</label>
+                                            <input
+                                                type="text"
+                                                className="form-control"
+                                                value={no_hp}
+                                                onChange={(e) => setNo_hp(e.target.value)}
+                                                placeholder="Masukan Nomor HP"
+                                            />
+                                        </div>
+                                        {errors.no_hp && <div className="alert alert-danger">{errors.no_hp[0]}</div>}
+                                        <div className="mb-3">
+                                            <label className="form-label fw-bold">Pesan</label>
+                                            <textarea
+                                                className="form-control"
+                                                value={teks_pesan}
+                                                onChange={(e) => setTeks_pesan(e.target.value)}
+                                                placeholder="masukan pesan"
+                                            >
+                                            </textarea>
+                                        </div>
+                                        {errors.teks_pesan && <div className="alert alert-danger">{errors.teks_pesan[0]}</div>}
                                         <div>
                                             {loading ? (
                                                 <button type="button" disabled className="btn btn-tertiary me-2">
@@ -116,4 +127,4 @@ const AparatursCreate = () => {
     );
 };
 
-export default AparatursCreate;
+export default WebContactsCreate;

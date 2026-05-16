@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 
 const Api = axios.create({
     //set endpoint API
-    baseURL: 'https://api-dapurcaguna.sahabatternak.com',
+    baseURL: 'https://api.ready-id.co.id',
 
     //set header axios
     headers: {

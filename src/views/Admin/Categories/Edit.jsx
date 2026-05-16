@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 import { useState, useEffect } from 'react';
 
 const CategoriesEdit = () => {
-    document.title = 'Edit Categories - RW30 Digital';
+    document.title = 'Edit Categories - PT Ready Industries Indonesia';
     const navigate = useNavigate();
     const { id } = useParams();
     const [name, setName] = useState('');
