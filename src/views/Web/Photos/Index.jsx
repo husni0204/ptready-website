@@ -7,7 +7,7 @@ import CardPhoto from '../../../components/general/CardPhoto';
 import Pagination from '../../../components/general/Pagination';
 
 const WebPhotosIndex = () => {
-    document.title = 'Galeri Foto Dapur Caguna';
+    document.title = 'Galeri PT Ready Industries Indonesia';
 
     const [photos, setPhotos] = useState([]);
     const [loadingPhoto, setLoadingPhoto] = useState(true);
@@ -16,7 +16,7 @@ const WebPhotosIndex = () => {
         perPage: 0,
         total: 0,
     });
-
+    
     const fetchDataPhotos = async (pageNumber = 1) => {
         setLoadingPhoto(true);
         const page = pageNumber ? pageNumber : pagination.currentPage;

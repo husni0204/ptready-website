@@ -66,7 +66,9 @@ const WebPostsShow = () => {
                                     </div>
                                     <hr />
                                     <img src={post.image} className="rounded-3 w-100 mb-3" alt={post.title} />
-                                    <p dangerouslySetInnerHTML={{ __html: post.content }}></p>
+                                    <div className="custom-black">
+                                        <p dangerouslySetInnerHTML={{ __html: post.content }}></p>
+                                    </div>
                                 </div>
                             </div>
                         )}

@@ -5,5 +5,6 @@ import WebPhotosIndex from './Photos/Index';
 import WebPostsIndex from './Posts/Index';
 import WebPostsShow from './Posts/Show';
 import WebContactsCreate from './Contacts/Create';
+import WebVisimisi from './Visimisi';
 
-export { Home, WebPagesIndex, WebPagesShow, WebPhotosIndex, WebPostsIndex, WebPostsShow, WebContactsCreate };
+export { Home, WebPagesIndex, WebPagesShow, WebPhotosIndex, WebPostsIndex, WebPostsShow, WebContactsCreate, WebVisimisi };

@@ -94,7 +94,7 @@ const PhotosIndex = () => {
             <main>
                 <div className="container-fluid mb-5 mt-5">
                     <div className="row">
-                        <div className="col-md-12">{hasAnyPermission(['sliders.create']) && <PhotosCreate fetchData={fetchData} />}</div>
+                        <div className="col-md-12">{hasAnyPermission(['photos.create']) && <PhotosCreate fetchData={fetchData} />}</div>
                     </div>
                     <div className="row mt-4">
                         <div className="col-md-8">
@@ -148,7 +148,7 @@ const PhotosIndex = () => {
                                                                 </td>
                                                                 <td>{photo.caption}</td>
                                                                 <td className="text-center">
-                                                                    {hasAnyPermission(['posts.delete']) && (
+                                                                    {hasAnyPermission(['photos.delete']) && (
                                                                         <button
                                                                             onClick={() => deletePhoto(photo.id)}
                                                                             className="btn btn-danger btn-sm"

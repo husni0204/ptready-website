@@ -15,6 +15,14 @@ const Api = axios.create({
     },
 });
 
+// let browser set multipart boundary for file uploads
+Api.interceptors.request.use((config) => {
+    if (config.data instanceof FormData) {
+        delete config.headers['Content-Type'];
+    }
+    return config;
+});
+
 //handle unauthenticated
 Api.interceptors.response.use(
     function (response) {

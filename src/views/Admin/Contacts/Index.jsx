@@ -54,7 +54,7 @@ const ContacsIndex = () => {
         fetchData(1, e.target.value);
     };
 
-    const deleteAparatur = (id) => {
+    const deleteContact = (id) => {
         confirmAlert({
             title: 'Anda Yakin ?',
             message: 'Data yang dihapus tidak dapat dikembalikan',
@@ -97,9 +97,9 @@ const ContacsIndex = () => {
                     <div className="row">
                         <div className="col-md-8">
                             <div className="row">
-                                {hasAnyPermission(['aparaturs.create']) && (
+                                {hasAnyPermission(['contacts.create']) && (
                                     <div className="col-md-3 col-12 mb-2">
-                                        <Link to="/admin/aparaturs/create" className="btn btn-md btn-primary border-0 shadow-sm w-100" type="button">
+                                        <Link to="/admin/contacts/create" className="btn btn-md btn-primary border-0 shadow-sm w-100" type="button">
                                             <i className="fa fa-plus-circle"></i> Add New
                                         </Link>
                                     </div>
@@ -131,9 +131,10 @@ const ContacsIndex = () => {
                                                     <th className="border-0" style={{ width: '5%' }}>
                                                         No.
                                                     </th>
-                                                    <th className="border-0">Image</th>
-                                                    <th className="border-0">Full Name</th>
-                                                    <th className="border-0">Role</th>
+                                                    <th className="border-0">Nama</th>
+                                                    <th className="border-0">Email</th>
+                                                    <th className="border-0">Nomor HP</th>
+                                                    <th className="border-0">Pesan</th>
                                                     <th className="border-0" style={{ width: '15%' }}>
                                                         Actions
                                                     </th>
@@ -143,30 +144,20 @@ const ContacsIndex = () => {
                                                 {
                                                     //cek apakah data ada
                                                     contacts.length > 0 && loading === false ? (
-                                                        //looping data "aparaturs" dengan "map"
-                                                        contacts.map((aparatur, index) => (
+                                                        //looping data "contacts" dengan "map"
+                                                        contacts.map((contact, index) => (
                                                             <tr key={index}>
                                                                 <td className="fw-bold text-center">
                                                                     {++index + (pagination.currentPage - 1) * pagination.perPage}
                                                                 </td>
+                                                                <td>{contact.nama}</td>
+                                                                <td>{contact.email}</td>
+                                                                <td>{contact.nomor_hp}</td>
+                                                                <td>{contact.teks_pesan}</td>
                                                                 <td className="text-center">
-                                                                    <img src={aparatur.image} width="50" />
-                                                                </td>
-                                                                <td>{aparatur.name}</td>
-                                                                <td>{aparatur.role}</td>
-                                                                <td className="text-center">
-                                                                    {hasAnyPermission(['aparaturs.edit']) && (
-                                                                        <Link
-                                                                            to={`/admin/aparaturs/edit/${aparatur.id}`}
-                                                                            className="btn btn-primary btn-sm me-2"
-                                                                        >
-                                                                            <i className="fa fa-pencil-alt"></i>
-                                                                        </Link>
-                                                                    )}
-
-                                                                    {hasAnyPermission(['aparaturs.delete']) && (
+                                                                    {hasAnyPermission(['contacts.delete']) && (
                                                                         <button
-                                                                            onClick={() => deleteAparatur(aparatur.id)}
+                                                                            onClick={() => deleteContact(contact.id)}
                                                                             className="btn btn-danger btn-sm"
                                                                         >
                                                                             <i className="fa fa-trash"></i>

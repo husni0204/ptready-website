@@ -2,7 +2,10 @@ import Cookies from 'js-cookie';
 
 const hasAnyPermission = (permissions) => {
     //get permissions from cookies
-    let allPermissions = JSON.parse(Cookies.get('permissions'));
+    const permissionsCookie = Cookies.get('permissions');
+    if (!permissionsCookie) return false;
+
+    let allPermissions = JSON.parse(permissionsCookie);
 
     let hasPermission = false;
 

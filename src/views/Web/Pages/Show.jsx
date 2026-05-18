@@ -39,7 +39,7 @@ const WebPagesShow = () => {
                             </h4>
                             <hr />
                             <div className="card border-0 shadow-sm rounded-3">
-                                <div className="card-body post-content">
+                                <div className="card-body post-content custom-black">
                                     <p dangerouslySetInnerHTML={{ __html: page.content }}></p>
                                 </div>
                             </div>

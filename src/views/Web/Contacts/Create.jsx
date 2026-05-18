@@ -1,4 +1,4 @@
-import LayoutAdmin from '../../../layouts/Admin';
+import LayoutWeb from '../../../layouts/Web';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Api from '../../../services/Api';
@@ -9,46 +9,42 @@ const WebContactsCreate = () => {
     const navigate = useNavigate();
     const [nama, setNama] = useState('');
     const [email, setEmail] = useState('');
-    const [no_hp, setNo_hp] = useState('');
+    const [nomor_hp, setNomor_hp] = useState('');
     const [teks_pesan, setTeks_pesan] = useState('');
-    const [errors, setErros] = useState([]);
+    const [errors, setErros] = useState({});
     const [loading, setLoading] = useState(false);
 
     const storeContact = async (e) => {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('nama', nama);
-        formData.append('email', email);
-        formData.append('no_hp', no_hp);
-        formData.append('teks_pesan', teks_pesan);
 
         try {
             setLoading(true);
-            await Api.post('/api/public/contacts', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
+            await Api.post('/api/public/contact-us', {
+                nama,
+                email,
+                nomor_hp,
+                teks_pesan,
             }).then((response) => {
                 toast.success(response.data.message, {
                     position: 'top-right',
                     duration: 4000,
                 });
-                navigate('/public/contacts');
+                navigate('/');
                 setLoading(false);
             });
         } catch (error) {
-            setErros(error.response.data);
+            setErros(error.response?.data?.errors ?? {});
             setLoading(false);
         }
     };
 
     return (
-        <LayoutAdmin>
+        <LayoutWeb>
             <main>
-                <div className="container-fluid mb-5 mt-5">
+                <div className="container mb-5 mt-5">
                     <div className="row">
                         <div className="col-md-12">
-                            <Link to="/admin/contacts" className="btn btn-md btn-primary border-0 shadow-sm mb-3" type="button">
+                            <Link to="/" className="btn btn-md btn-primary border-0 shadow-sm mb-3" type="button">
                                 <i className="fa fa-long-arrow-alt-left me-2"></i> Back
                             </Link>
                             <div className="card border-0 rounded shadow-sm border-top-success">
@@ -85,12 +81,12 @@ const WebContactsCreate = () => {
                                             <input
                                                 type="text"
                                                 className="form-control"
-                                                value={no_hp}
-                                                onChange={(e) => setNo_hp(e.target.value)}
+                                                value={nomor_hp}
+                                                onChange={(e) => setNomor_hp(e.target.value)}
                                                 placeholder="Masukan Nomor HP"
                                             />
                                         </div>
-                                        {errors.no_hp && <div className="alert alert-danger">{errors.no_hp[0]}</div>}
+                                        {errors.nomor_hp && <div className="alert alert-danger">{errors.nomor_hp[0]}</div>}
                                         <div className="mb-3">
                                             <label className="form-label fw-bold">Pesan</label>
                                             <textarea
@@ -123,7 +119,7 @@ const WebContactsCreate = () => {
                     </div>
                 </div>
             </main>
-        </LayoutAdmin>
+        </LayoutWeb>
     );
 };
 

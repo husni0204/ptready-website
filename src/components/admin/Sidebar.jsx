@@ -10,9 +10,8 @@ const sidebar = () => {
     //Javascript split method to get the name of the path in array
     const activeRoute = pathname.split('/');
     //get data user from cookies
-    const user = JSON.parse(Cookies.get('user'));
-
-    console.log('info user : ', user);
+    const userCookie = Cookies.get('user');
+    const user = userCookie ? JSON.parse(userCookie) : null;
 
     return (
         <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -29,7 +28,7 @@ const sidebar = () => {
                     {(hasAnyPermission(['categories.index']) ||
                         hasAnyPermission(['posts.index']) ||
                         hasAnyPermission(['pages.index']) ||
-                        hasAnyPermission(['contacts.delete'])) && (
+                        hasAnyPermission(['contacts.index'])) && (
                         <>
                             <div className="sb-sidenav-menu-heading">CONTENT MANAGEMENT</div>
                             <a
@@ -232,7 +231,7 @@ const sidebar = () => {
             </div>
             <div className="sb-sidenav-footer">
                 <div className="small">Logged in as:</div>
-                {user.email}
+                {user?.email ?? '-'}
             </div>
         </nav>
     );

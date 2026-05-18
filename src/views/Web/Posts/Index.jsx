@@ -7,7 +7,7 @@ import CardPost from '../../../components/general/CardPost';
 import Pagination from '../../../components/general/Pagination';
 
 const WebPostsIndex = () => {
-    document.title = 'Berita Dapur Caguna';
+    document.title = 'Berita PT Ready Industries Indonesia';
 
     const [posts, setPosts] = useState([]);
     const [loadingPost, setLoadingPost] = useState(true);
@@ -45,7 +45,7 @@ const WebPostsIndex = () => {
                 <div className="row">
                     <div className="col-md-12">
                         <h5 className="text-uppercase">
-                            <i className="fa fa-book"></i> BERITA CAGUNA
+                            <i className="fa fa-book"></i> BERITA READY INDUSTRIES INDONESIA
                         </h5>
                         <hr />
                     </div>

@@ -6,7 +6,7 @@ import Loading from '../../../components/general/Loading';
 import CardPage from '../../../components/general/CardPage';
 
 const WebPagesIndex = () => {
-    document.title = 'Tentang Dapur Caguna';
+    document.title = 'Postingan PT Ready Industries Indonesia';
     const [pages, setPages] = useState([]);
     const [loadingPages, setLoadingPages] = useState(true);
 
@@ -33,7 +33,7 @@ const WebPagesIndex = () => {
                 <div className="row">
                     <div className="col-md-12">
                         <h5 className="text-uppercase">
-                            <i className="fa fa-info-circle"></i> TENTANG DAPUR CAGUNA
+                            <i className="fa fa-info-circle"></i> POSTINGAN READY INDUSTRIES INDONESIA
                         </h5>
                         <hr />
                     </div>

@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 const PhotosCreate = (props) => {
     const [image, setImage] = useState('');
     const [caption, setCaption] = useState('');
-    const [errors, setErrors] = useState([]);
+    const [errors, setErrors] = useState({});
     const token = Cookies.get('token');
     const [loading, setLoading] = useState(false);
 
@@ -21,7 +21,6 @@ const PhotosCreate = (props) => {
             await Api.post('/api/admin/photos', formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
-                    'Content-Type': 'multipart/form-data',
                 },
             }).then((response) => {
                 toast.success(response.data.message, {
@@ -29,12 +28,15 @@ const PhotosCreate = (props) => {
                     duration: 4000,
                 });
                 document.getElementById('file').value = '';
+                setImage('');
                 setCaption('');
+                setErrors({});
                 props.fetchData();
                 setLoading(false);
             });
         } catch (error) {
-            setErrors(error.response.data.errors);
+            console.log("ini errornya :", error.response?.data);
+            setErrors(error.response?.data?.errors ?? {});
             setLoading(false);
         }
     };
@@ -45,7 +47,7 @@ const PhotosCreate = (props) => {
                 <form onSubmit={storePhoto}>
                     <div className="mb-3">
                         <label className="form-label fw-bold">Image</label>
-                        <input type="file" id="file" className="form-control" accept="images/*" onChange={(e) => setImage(e.target.files[0])} />
+                        <input type="file" id="file" className="form-control" accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
                     </div>
                     {errors.image && <div className="alert alert-danger">{errors.image[0]}</div>}
 

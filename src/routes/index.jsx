@@ -32,6 +32,7 @@ import {
     WebPhotosIndex,
     WebPostsIndex,
     WebPostsShow,
+    WebVisimisi,
 } from '../views/Web';
 
 const RoutesIndex = () => {
@@ -247,7 +248,7 @@ const RoutesIndex = () => {
             <Route path="/" element={<Home />} />
 
             {/* route "/contacts" */}
-            <Route path="/contacts" element={<WebContactsCreate />} />
+            <Route path="/contact-us" element={<WebContactsCreate />} />
 
             {/* route "/pages" */}
             <Route path="/pages" element={<WebPagesIndex />} />
@@ -263,6 +264,9 @@ const RoutesIndex = () => {
 
             {/* route "/posts:/slug" */}
             <Route path="/posts/:slug" element={<WebPostsShow />} />
+
+            {/* route "/Visimisi" */}
+            <Route path="/visimisi" element={<WebVisimisi />} />
         </Routes>
     );
 };

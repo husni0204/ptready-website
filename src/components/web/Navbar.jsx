@@ -41,7 +41,7 @@ const Navbar = () => {
                         <div className="col-md-9 d-none d-md-block d-lg-block">
                             <div className="header-logo">
                                 <a href="#">
-                                    <img src="/images/logo_ready.png" width="110" className="img-responsive" />
+                                    <img src="/images/logo_ready.png" width="50" className="img-responsive" />
                                 </a>
                             </div>
                             <div className="header-text">
@@ -56,7 +56,7 @@ const Navbar = () => {
                         <div className="row d-block d-md-none d-lg-none">
                             <div className="col-md-6 text-center mt-3">
                                 <a href="#">
-                                    <img src="/images/logo-jbg.png" width="110" className="img-responsive" />
+                                    <img src="/images/logo_ready.png" width="110" className="img-responsive" />
                                 </a>
                             </div>
                             <div className="col-md-12 text-center text-white mb-3">
@@ -116,7 +116,16 @@ const Navbar = () => {
                                     className={activeRoute[1] === 'pages' ? 'nav-link active text-uppercase' : 'nav-link text-uppercase'}
                                     to="/pages"
                                 >
-                                    <i className="fa fa-info-circle"></i> TENTANG KAMI
+                                    <i className="fa fa-info-circle"></i> POSTINGAN
+                                </Link>
+                            </li>
+
+                            <li className="nav-item ms-2">
+                                <Link
+                                    className={activeRoute[1] === 'visimisi' ? 'nav-link active text-uppercase' : 'nav-link text-uppercase'}
+                                    to="/visimisi"
+                                >
+                                    <i className="fa fa-info-circle"></i> VISI MISI
                                 </Link>
                             </li>
 
@@ -141,7 +150,7 @@ const Navbar = () => {
                             <li className="nav-item ms-2">
                                 <Link
                                     className={activeRoute[1] === 'contacts' ? 'nav-link active text-uppercase' : 'nav-link text-uppercase'}
-                                    to="/contacts"
+                                    to="/contact-us"
                                 >
                                     <i className="fa fa-user-circle"></i> CONTACT US
                                 </Link>
